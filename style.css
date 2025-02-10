@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Стиль для заголовка */
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header .logo p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Стиль для навігації */
+nav {
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+/* Основний контент */
+main {
+    padding: 2rem;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-gallery {
+    margin-top: 3rem;
+}
+
+.image-gallery h3 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    background-color: #ccc;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.gallery-item:hover {
+    background-color: #e74c3c;
+    cursor: pointer;
+}
+
+/* Футер */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .intro h2 {
+        font-size: 1.8rem;
+    }
+}
