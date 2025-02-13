@@ -35,6 +35,15 @@ body {
     color: white;
 }
 
+#auth-container .tabs button {
+    background: #ccc;
+}
+
+#auth-container .form input {
+    width: 100%;
+}
+
+
 .form {
     display: block;
 }
