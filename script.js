@@ -1,0 +1,42 @@
+function showTab(tab) {
+    if (tab === "signup") {
+        document.getElementById("signup-form").classList.remove("hidden");
+        document.getElementById("login-form").classList.add("hidden");
+        document.getElementById("signup-tab").classList.add("active");
+        document.getElementById("login-tab").classList.remove("active");
+    } else {
+        document.getElementById("signup-form").classList.add("hidden");
+        document.getElementById("login-form").classList.remove("hidden");
+        document.getElementById("signup-tab").classList.remove("active");
+        document.getElementById("login-tab").classList.add("active");
+    }
+}
+
+async function register() {
+    const username = document.getElementById("signup-username").value;
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+
+    const response = await fetch("/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password }),
+    });
+
+    const result = await response.json();
+    document.getElementById("signup-message").textContent = result.message;
+}
+
+async function login() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    const response = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+    });
+
+    const result = await response.json();
+    document.getElementById("login-message").textContent = result.message;
+}
