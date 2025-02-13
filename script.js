@@ -1,3 +1,24 @@
+// Відкриття модального вікна при натисканні на кнопку
+const openModalBtn = document.getElementById("openModalBtn");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const authModal = document.getElementById("authModal");
+
+openModalBtn.onclick = function() {
+    authModal.style.display = "flex"; // Показуємо модальне вікно
+};
+
+closeModalBtn.onclick = function() {
+    authModal.style.display = "none"; // Закриваємо модальне вікно
+};
+
+// Закрити модальне вікно при натисканні поза ним
+window.onclick = function(event) {
+    if (event.target === authModal) {
+        authModal.style.display = "none";
+    }
+};
+
+// Перемикання вкладок (реєстрація / вхід)
 function showTab(tab) {
     if (tab === "signup") {
         document.getElementById("signup-form").classList.remove("hidden");
@@ -12,6 +33,7 @@ function showTab(tab) {
     }
 }
 
+// Функція реєстрації
 async function register() {
     const username = document.getElementById("signup-username").value;
     const email = document.getElementById("signup-email").value;
@@ -27,6 +49,7 @@ async function register() {
     document.getElementById("signup-message").textContent = result.message;
 }
 
+// Функція входу
 async function login() {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
