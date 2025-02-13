@@ -13,15 +13,16 @@
     </div>
 </header>
     
-    <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up / Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
+  <!-- Кнопка для відкриття модального вікна -->
+<button id="openModalBtn" class="modal-btn">Sign Up / Login</button>
+
+<!-- Модальне вікно для реєстрації та входу -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <!-- Закрити кнопку -->
+        <span class="close" id="closeModalBtn">&times;</span>
+        
+        <!-- Вкладки: Реєстрація / Вхід -->
         <div class="tabs">
             <button id="signup-tab" class="active" onclick="showTab('signup')">Sign Up</button>
             <button id="login-tab" onclick="showTab('login')">Login</button>
@@ -46,10 +47,9 @@
             <p id="login-message"></p>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script>
 
 <nav>
     <ul>
